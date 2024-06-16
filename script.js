@@ -1,20 +1,26 @@
 document.getElementById('search-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    let summonerName = document.getElementById('summoner-name').value.trim();
+    let riotId = document.getElementById('riot-id').value.trim();
     let region = document.getElementById('region').value;
-    if (summonerName) {
-        getSummonerStats(summonerName, region);
+    if (riotId) {
+        let [name, tag] = riotId.split('#');
+        if (name && tag) {
+            getSummonerStats(name, tag, region);
+        } else {
+            alert("Por favor, ingresa el Riot ID en el formato nombre#etiqueta.");
+        }
     } else {
-        alert("Por favor, ingresa un nombre de invocador.");
+        alert("Por favor, ingresa un Riot ID.");
     }
 });
 
-async function getSummonerStats(summonerName, region) {
-    const apiKey = 'RGAPI-f726eb60-4e7b-4b5c-9c13-1b6212564921';  // Reemplaza esto con tu clave API
-    const encodedSummonerName = encodeURIComponent(summonerName);
+async function getSummonerStats(name, tag, region) {
+    const apiKey = 'RGAPI-f726eb60-4e7b-4b5c-9c13-1b6212564921';  // Reemplaza esto con tu clave API real
+    const encodedName = encodeURIComponent(name);
+    const encodedTag = encodeURIComponent(tag);
 
     try {
-        let response = await fetch(`https://${region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${encodedSummonerName}?api_key=${apiKey}`);
+        let response = await fetch(`https://${region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${encodedName}?api_key=${apiKey}`);
         if (!response.ok) throw new Error('Error al obtener los datos del invocador');
         let summonerData = await response.json();
 
@@ -25,7 +31,7 @@ async function getSummonerStats(summonerName, region) {
         displayStats(summonerData, rankedData);
     } catch (error) {
         console.error('Error fetching data:', error);
-        document.getElementById('stats').innerHTML = `<p>Error al obtener los datos. Intenta nuevamente.</p>`;
+        document.getElementById('stats').innerHTML = `<p>Error al obtener los datos. Intenta nuevamente. Error: ${error.message}</p>`;
     }
 }
 
