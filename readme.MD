@@ -1,11 +1,10 @@
-<link rel="icon"  type="image/png" href="lol-logo.png">
+<h1 align="center">Legend Stats 🧉</h1>
+<p>Página de codigo abierto para poder ver estadísticas de un jugador usando la API de riot</p><br>
+<p>Diseño simple y rapido, útilizando solamente HTML, CSS, JS + API riot</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legend Stats</title>
-    <link rel="icon"  type="image/png" href="lol-logo.png">
-    <link rel="stylesheet" href="style.css">
-</head>
 
-# Legend Stats
+Hecho por Masterez (Mz)
+
+
+
+
