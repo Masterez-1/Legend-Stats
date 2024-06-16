@@ -1,10 +1,9 @@
 <h1 align="center">Legend Stats 🧉</h1>
-<p>Página de codigo abierto para poder ver estadísticas de un jugador usando la API de riot</p><br>
-<p>Diseño simple y rapido, útilizando solamente HTML, CSS, JS + API riot</p>
+Página de codigo abierto para poder ver estadísticas de un jugador usando la API de riot<br>
+Diseño simple y rapido, útilizando solamente HTML, CSS, JS + API riot
+
+<h3 aling="center">| Hecho por Masterez (Mz) 🇦🇷 🧉 |</h3>
 
 
-Hecho por Masterez (Mz)
-
-s
 
 
