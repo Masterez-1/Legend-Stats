@@ -15,7 +15,7 @@ document.getElementById('search-form').addEventListener('submit', function (even
 });
 
 async function getSummonerStats(name, tag, region) {
-    const apiKey = 'API';  // Reemplaza esto con tu API de riot
+    const apiKey = 'API';  // API de riot
     const encodedName = encodeURIComponent(name);
     const encodedTag = encodeURIComponent(tag);
 
